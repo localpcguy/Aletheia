@@ -1,0 +1,20 @@
+
+@import "bootstrap.less";
+// Padding for fixed-navbar
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+@import "responsive.less";
+@iconSpritePath: "/images/bootstrap/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "/images/bootstrap/glyphicons-halflings-white.png";
+
+// Active nav items
+.home .navbar .nav .home > a,
+.home .navbar .nav .home > a:hover,
+.about .navbar .nav .about > a,
+.about .navbar .nav .about > a:hover {
+  color: @navbarLinkColorActive;
+  text-decoration: none;
+  background-color: @navbarLinkBackgroundActive;
+}
