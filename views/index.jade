@@ -1,8 +1,37 @@
-
 include includes/nav
 .container
-  .hero-unit
-    h1 Hello, World!
-    p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-    p
-      a.btn.btn-primary.btn-large(href="/about") Lean more >>
+	.hero-unit.span12
+		h1 Topic Sorter
+		p A proof of concept to allow topics to be tracked for inclusion in an Engineering meeting.
+		h2 Features to include:
+		ul.clearfix
+			li.pull-left.span6 Add topics
+			li.pull-right.span5 See topic detail
+			li.pull-left.span6 Discuss topics before & after Engineering meeting
+			li.pull-right.span5 Vote on favorite topics
+			li.pull-left.span6 Subscribe to topics for notification on changes
+		p.pull-left Enter a new topic or vote on one of the existing topics.
+		p.span2
+			a.btn.btn-primary.btn-large(href="/about") Lean more
+
+	.row
+		div.span7.offset1
+			ul#topics
+
+		div.span4
+			form#newTopic
+				label New Topic Title:
+				p
+					input(name="topic")
+
+				label New Topic Description:
+				p
+					textarea(name="description")
+				label Name:
+				p
+					input(name="name")
+				label Email:
+				p
+					input(name="email")
+				p
+					submit.btn.btn-large(href="/about") Add New Topic

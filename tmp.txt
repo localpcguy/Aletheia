@@ -1,0 +1,4 @@
+.......P--
+
+4 scenarios (1 pending, 3 passed)
+10 steps (1 pending, 2 skipped, 7 passed)
