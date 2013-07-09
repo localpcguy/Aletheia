@@ -19,7 +19,7 @@ var World = function World(callback) {
     };
 
     this.hasForm = function(formId, numInputs, numTextAreas, numSubmit) {
-        var bDOM, form, numFormInputs = 0, numFormTA = 0, numFormSubmit = 0;
+        var form, numFormInputs = 0, numFormTA = 0, numFormSubmit = 0;
 
         formId = formId.substring(0,1) === '#' ? formId.substring(1, formId.length) : formId;
         form = this.browser.document.getElementById(formId);
@@ -28,6 +28,24 @@ var World = function World(callback) {
         numFormSubmit = this.browser.queryAll('submit', form).length;
 
         return numInputs == numFormInputs && numTextAreas == numFormTA && numSubmit == numFormSubmit;
+    };
+
+    this.fillForm = function(formId, title, desc, name, email) {
+        var inputTitle, taDesc, inputName, inputEmail;
+
+        this.browser.fill('input[name=topic]', title);
+        this.browser.fill('input[name=description]', desc);
+        this.browser.fill('input[name=name]', name);
+        this.browser.fill('input[name=email]', email);
+
+        formId = formId.substring(0,1) === '#' ? formId.substring(1, formId.length) : formId;
+        form = this.browser.document.getElementById(formId);
+        inputTitle = this.browser.text('input[name=topic]', form);
+        taDesc = this.browser.text('input[name=description]', form);
+        inputName = this.browser.text('input[name=name]', form);
+        inputEmail = this.browser.text('input[name=email]', form);
+
+        return inputTitle === title && taDesc === desc && inputName === name && inputEmail === email;
     };
 
 
